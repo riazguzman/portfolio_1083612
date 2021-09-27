@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import ProjectsArray from "./ProjectsArray";
+import ProjectsArray from "./components/ProjectsArray";
+import Comment from "./components/Comment";
 
 const App = () => {
   const [formData, setFormData] = useState({
@@ -97,45 +98,61 @@ const App = () => {
   return (
     <div className="App">
       <ProjectsArray />
-      <div>Leave a Comment</div>
-      <input name="name" type="text" onChange={OnChangeComment} />
-      <input name="email" type="text" onChange={OnChangeComment} />
-      <input name="title" type="text" onChange={OnChangeComment} />
-      <input name="content" type="text" onChange={OnChangeComment} />
-      <input
-        name="submit"
-        type="button"
-        onClick={OnSubmitComment}
-        value="Message"
-      />
-      <div>Send an Email</div>
-      <input name="name" type="text" onChange={OnChange} />
-      <input name="email" type="text" onChange={OnChange} />
-      <input name="title" type="text" onChange={OnChange} />
-      <input name="content" type="text" onChange={OnChange} />
-      <input
-        name="submit"
-        type="button"
-        onClick={OnSubmitEmail}
-        value="Message"
-      />
+      <div style={{ display: "flex", padding: "20px" }}>
+        <div
+          style={{ margin: "auto", border: "1px solid black", padding: "20px" }}
+        >
+          <div>Leave a Comment</div>
+          <div>Name</div>
+          <input name="name" type="text" onChange={OnChangeComment} />
+          <div>Email</div>
+          <input name="email" type="text" onChange={OnChangeComment} />
+          <div>Title</div>
+          <input name="title" type="text" onChange={OnChangeComment} />
+          <div>Message</div>
+          <input name="content" type="text" onChange={OnChangeComment} />
+          <input
+            name="submit"
+            type="button"
+            onClick={OnSubmitComment}
+            value="Message"
+          />
+        </div>
+        <div
+          style={{ margin: "auto", border: "1px solid black", padding: "20px" }}
+        >
+          <div>Send an Email</div>
+          <div>Email</div>
+          <input name="email" type="text" onChange={OnChange} />
+          <div>Title</div>
+          <input name="title" type="text" onChange={OnChange} />
+          <div>Content</div>
+          <input name="content" type="text" onChange={OnChange} />
+          <input
+            name="submit"
+            type="button"
+            onClick={OnSubmitEmail}
+            value="Message"
+          />
+        </div>
+      </div>
       {comments.length > 0 && (
         <div
-          style={{ backgroundColor: "red", height: "200px", overflow: "auto" }}
+          style={{
+            height: "400px",
+            overflow: "auto",
+            backgroundColor: "#e5e5e5",
+          }}
         >
           {comments.map((data, i) => {
             console.log(data);
             return (
-              <div
-                style={{
-                  border: "1px solid black",
-                }}
-              >
-                <div style={{ backgroundColor: "red" }}>{data.name}</div>
-                <div style={{ backgroundColor: "red" }}>{data.email}</div>
-                <div style={{ backgroundColor: "red" }}>{data.title}</div>
-                <div style={{ backgroundColor: "red" }}>{data.content}</div>
-              </div>
+              <Comment
+                name={data.name}
+                email={data.email}
+                title={data.title}
+                content={data.content}
+              />
             );
           })}
         </div>
