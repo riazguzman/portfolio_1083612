@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm start --prefix ./frontend",
+    "start": "cd backend/ &&node index.js",
     "frontend-dev": "cd frontend/ && npm start",
     "backend-dev": "cd backend/ && npm start",
     "start-dev": "npm-run-all --parallel frontend-dev backend-dev",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix ./frontend && npm run build --prefix ./frontend"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
 
   },
   "keywords": [],
