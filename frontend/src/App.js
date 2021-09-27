@@ -46,9 +46,7 @@ const App = () => {
 
   const getPosts = async (e) => {
     try {
-      const posts = await axios.get(
-        "https://taegyuyun.herokuapp.com/api/getComments"
-      );
+      const posts = await axios.get("http://localhost:8000/api/getComments");
       setComments(posts.data);
     } catch (err) {
       console.error(err);
