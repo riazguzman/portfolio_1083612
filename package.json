@@ -1,0 +1,14 @@
+{
+  "name": "portfolio_1083612",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "frontend-dev": "cd frontend/ && npm start",
+    "backend-dev": "cd backend/ && npm start",
+    "start-dev": "npm-run-all --parallel frontend-dev backend-dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
