@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cd backend/ &&node index.js",
+    "start": "NODE_ENV=development node index.js",
     "frontend-dev": "cd frontend/ && npm start",
     "backend-dev": "cd backend/ && npm start",
     "start-dev": "npm-run-all --parallel frontend-dev backend-dev",
