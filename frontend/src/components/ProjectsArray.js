@@ -3,6 +3,7 @@ import Project from "./Project";
 import creditCardImage from "../images/creditcard1.png";
 import unimelbSubjectsPlannerImage from "../images/unimelb_subjects_project.png";
 import SnacksInAVanImage from "../images/SnacksInAVan.PNG";
+import pegGIF from "../images/pegsolitaire.gif";
 
 const ProjectsArray = () => {
   const UnimelbSubjectsPlanner = [
@@ -16,6 +17,10 @@ const ProjectsArray = () => {
   const CreditCardForm = [
     "> Credit Card Form and Validator built using React.",
     "> Custom Regex Validation Forms",
+  ];
+  const peg = [
+    "When the AI solver is called,  it should explore all possible paths (sequence of jumpactions) following a Depth First Search (DFS) strategy, until consuming the budget or until a pathsolving the game is found.",
+    "Algorith implemented using C.",
   ];
   return (
     <div style={{}}>
@@ -31,6 +36,12 @@ const ProjectsArray = () => {
         github="https://github.com/INFO30005-2021-SM1/project-t08-fletcher"
         link="https://snacksinavan-kelvin.herokuapp.com/"
         description={SnacksInAVan}
+      />
+      <Project
+        img={pegGIF}
+        name="Peg Solitaire AI solver"
+        github="https://github.com/riazguzman/peg_solitaire"
+        description={peg}
       />
       <Project
         img={creditCardImage}
