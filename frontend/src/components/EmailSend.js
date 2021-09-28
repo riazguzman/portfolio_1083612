@@ -26,7 +26,7 @@ const SendEmail = ({ OnChange, OnSubmitEmail }) => {
         <div>Title</div>
         <input name="title" type="text" onChange={OnChange} />
         <div>Content</div>
-        <input
+        <textarea
           name="content"
           type="text"
           onChange={OnChange}

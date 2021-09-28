@@ -13,8 +13,10 @@ const Project = ({ img, name, description, github, link }) => {
     >
       <img
         style={{
-          maxHeight: "500px",
-          maxWidth: "500px",
+          minHeight: "16vw",
+          maxHeight: "16vw",
+          minWidth: "30vw",
+          maxWidth: "30vw",
           boxShadow: "5px 5px 1px 1px #F2F2F7",
         }}
         src={img}

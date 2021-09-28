@@ -19,8 +19,9 @@ const ProjectsArray = () => {
     "> Custom Regex Validation Forms",
   ];
   const peg = [
-    "When the AI solver is called,  it should explore all possible paths (sequence of jumpactions) following a Depth First Search (DFS) strategy, until consuming the budget or until a pathsolving the game is found.",
-    "Algorith implemented using C.",
+    "> When the AI solver is called,  it should explore all possible paths (sequence of jumpactions) following a Depth First Search (DFS) strategy.",
+    "> Program continues to search for the solution until consuming the budget or until a pathsolving the game is found.",
+    "> Algorith implemented using C.",
   ];
   return (
     <div style={{}}>
