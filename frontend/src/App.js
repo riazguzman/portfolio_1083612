@@ -38,11 +38,11 @@ const App = () => {
         "https://taegyuyun.herokuapp.com/api/comment",
         messageData
       );
+      await getPosts();
       //console.log(message);
     } catch (err) {
       console.error(err);
     }
-    await getPosts();
   };
 
   const getPosts = async (e) => {
@@ -146,12 +146,20 @@ const App = () => {
         >
           {comments.map((data, i) => {
             console.log(data);
+            let today = new Date();
+            let date =
+              today.getFullYear() +
+              "-" +
+              (today.getMonth() + 1) +
+              "-" +
+              today.getDate();
             return (
               <Comment
                 name={data.name}
                 email={data.email}
                 title={data.title}
                 content={data.content}
+                date={date}
               />
             );
           })}

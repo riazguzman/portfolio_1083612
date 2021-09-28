@@ -1,6 +1,6 @@
 import React from "react";
 
-const Comment = ({ name, email, title, content }) => {
+const Comment = ({ name, email, title, content, date }) => {
   return (
     <div
       style={{
@@ -40,6 +40,7 @@ const Comment = ({ name, email, title, content }) => {
         </div>
         <div style={{ fontSize: "12px" }}>{title}</div>
         <div style={{ fontSize: "12px" }}>{content}</div>
+        <div style={{ fontSize: "12px" }}>{date}</div>
       </div>
     </div>
   );

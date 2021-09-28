@@ -6,14 +6,7 @@ import SnacksInAVanImage from "../images/SnacksInAVan.PNG";
 
 const ProjectsArray = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        width: "90vw",
-        overflow: "auto",
-      }}
-    >
+    <div style={{}}>
       <Project
         img={creditCardImage}
         name="creditCardImage"
