@@ -3,7 +3,13 @@ import React from "react";
 const LeaveComment = ({ OnChangeComment, OnSubmitComment }) => {
   return (
     <div style={{ padding: "20px" }}>
-      <div style={{ paddingBottom: "20px", boxSizing: "border-box" }}>
+      <div
+        style={{
+          fontWeight: "bold",
+          paddingBottom: "20px",
+          boxSizing: "border-box",
+        }}
+      >
         Leave a Comment
       </div>
       <div

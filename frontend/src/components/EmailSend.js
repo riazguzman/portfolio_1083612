@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../components/Button";
 
 const SendEmail = ({ OnChange, OnSubmitEmail }) => {
   return (
@@ -10,7 +11,7 @@ const SendEmail = ({ OnChange, OnSubmitEmail }) => {
         padding: "40px",
       }}
     >
-      <div>Send an Email</div>
+      <div style={{ fontWeight: "bold" }}>Send an Email</div>
       <div
         style={{
           margin: "auto",
@@ -22,15 +23,25 @@ const SendEmail = ({ OnChange, OnSubmitEmail }) => {
         }}
       >
         <div>Email</div>
-        <input name="email" type="text" onChange={OnChange} />
+        <input
+          style={{ marginBottom: "20px" }}
+          name="email"
+          type="text"
+          onChange={OnChange}
+        />
         <div>Title</div>
-        <input name="title" type="text" onChange={OnChange} />
+        <input
+          style={{ marginBottom: "20px" }}
+          name="title"
+          type="text"
+          onChange={OnChange}
+        />
         <div>Content</div>
         <textarea
           name="content"
           type="text"
           onChange={OnChange}
-          style={{ width: "100%", height: "100%" }}
+          style={{ width: "100%", height: "100%", marginBottom: "20px" }}
         />
         <input
           name="submit"
