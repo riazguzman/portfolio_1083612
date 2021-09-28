@@ -111,7 +111,14 @@ const App = () => {
         }}
       >
         Hello Visitor,
-        <div style={{ fontSize: "20px", lineHeight: "10px", color: "black" }}>
+        <div
+          style={{
+            marginTop: "20px",
+            fontSize: "20px",
+            lineHeight: "10px",
+            color: "black",
+          }}
+        >
           My Name is Tae-gyu, a passionate software and web engineer
         </div>
         <Icons />

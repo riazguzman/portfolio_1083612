@@ -5,7 +5,6 @@ const SendEmail = ({ OnChange, OnSubmitEmail }) => {
     <div
       style={{
         textAlign: "center",
-        border: "3px solid black",
         width: "50vw",
         margin: "auto",
         padding: "40px",
@@ -31,15 +30,8 @@ const SendEmail = ({ OnChange, OnSubmitEmail }) => {
           name="content"
           type="text"
           onChange={OnChange}
-          style={{ resize: "both", overflow: "hidden" }}
+          style={{ width: "100%", height: "100%" }}
         />
-        <span
-          contentEditable
-          name="content"
-          role="textbox"
-          onChange={OnChange}
-          style={{ resize: "both", overflow: "hidden" }}
-        ></span>
         <input
           name="submit"
           type="button"

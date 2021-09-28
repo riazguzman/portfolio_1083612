@@ -12,6 +12,7 @@ const Icon = styled.div`
   margin-right: 20px;
   display: flex;
   align-items: center;
+  margin-top: 20px;
   &:hover {
     background-color: #e7f2ff;
     cursor: pointer;
