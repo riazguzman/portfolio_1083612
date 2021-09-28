@@ -1,8 +1,9 @@
 import React from "react";
 
-const Comment = ({ name, email, title, content, date }) => {
+const Comment = ({ name, id, title, content, date }) => {
   return (
     <div
+      id={id}
       style={{
         display: "flex",
         backgroundColor: "white",
@@ -22,7 +23,7 @@ const Comment = ({ name, email, title, content, date }) => {
           borderRadius: "50%",
         }}
       >
-        {email[0]}
+        {name[0]}
       </div>
       <div
         style={{

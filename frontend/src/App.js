@@ -3,6 +3,8 @@ import axios from "axios";
 
 import ProjectsArray from "./components/ProjectsArray";
 import Comment from "./components/Comment";
+import SendEmail from "./components/EmailSend";
+import LeaveComment from "./components/LeaveComment";
 
 const App = () => {
   const [formData, setFormData] = useState({
@@ -98,73 +100,49 @@ const App = () => {
   return (
     <div className="App">
       <ProjectsArray />
-      <div style={{ display: "flex", padding: "20px" }}>
-        <div
-          style={{ margin: "auto", border: "1px solid black", padding: "20px" }}
-        >
-          <div>Leave a Comment</div>
-          <div>Name</div>
-          <input name="name" type="text" onChange={OnChangeComment} />
-          <div>Email</div>
-          <input name="email" type="text" onChange={OnChangeComment} />
-          <div>Title</div>
-          <input name="title" type="text" onChange={OnChangeComment} />
-          <div>Message</div>
-          <input name="content" type="text" onChange={OnChangeComment} />
-          <input
-            name="submit"
-            type="button"
-            onClick={OnSubmitComment}
-            value="Message"
-          />
-        </div>
-        <div
-          style={{ margin: "auto", border: "1px solid black", padding: "20px" }}
-        >
-          <div>Send an Email</div>
-          <div>Email</div>
-          <input name="email" type="text" onChange={OnChange} />
-          <div>Title</div>
-          <input name="title" type="text" onChange={OnChange} />
-          <div>Content</div>
-          <input name="content" type="text" onChange={OnChange} />
-          <input
-            name="submit"
-            type="button"
-            onClick={OnSubmitEmail}
-            value="Message"
-          />
-        </div>
+      <SendEmail OnChange={OnChange} OnSubmitEmail={OnSubmitEmail} />
+      <div style={{ display: "flex", padding: "20px" }}></div>
+      <div
+        style={{
+          backgroundColor: "#e5e5e5",
+          width: "100%",
+          boxSizing: "border-box",
+          marginBottom: "50px",
+        }}
+      >
+        <LeaveComment
+          OnChangeComment={OnChangeComment}
+          OnSubmitComment={OnSubmitComment}
+        />
+        {comments.length > 0 && (
+          <div
+            style={{
+              height: "400px",
+              overflow: "auto",
+            }}
+          >
+            {comments.map((data, i) => {
+              console.log(data);
+              let today = new Date();
+              let date =
+                today.getFullYear() +
+                "-" +
+                (today.getMonth() + 1) +
+                "-" +
+                today.getDate();
+              return (
+                <Comment
+                  id={i}
+                  name={data.name}
+                  title={data.title}
+                  content={data.content}
+                  date={date}
+                />
+              );
+            })}
+          </div>
+        )}
       </div>
-      {comments.length > 0 && (
-        <div
-          style={{
-            height: "400px",
-            overflow: "auto",
-            backgroundColor: "#e5e5e5",
-          }}
-        >
-          {comments.map((data, i) => {
-            console.log(data);
-            let today = new Date();
-            let date =
-              today.getFullYear() +
-              "-" +
-              (today.getMonth() + 1) +
-              "-" +
-              today.getDate();
-            return (
-              <Comment
-                name={data.name}
-                email={data.email}
-                title={data.title}
-                content={data.content}
-                date={date}
-              />
-            );
-          })}
-        </div>
-      )}
     </div>
   );
 };

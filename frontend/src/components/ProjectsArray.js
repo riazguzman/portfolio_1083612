@@ -8,11 +8,6 @@ const ProjectsArray = () => {
   return (
     <div style={{}}>
       <Project
-        img={creditCardImage}
-        name="creditCardImage"
-        description="creditCardImage"
-      />
-      <Project
         img={unimelbSubjectsPlannerImage}
         name="unimelbSubjectsPlannerImage"
         description="Unimelb Subjects Planner"
@@ -23,9 +18,9 @@ const ProjectsArray = () => {
         description="SnacksInAVanImage"
       />
       <Project
-        img="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Fischotter_Lutra_lutra1.jpg/300px-Fischotter_Lutra_lutra1.jpg"
-        name="수달"
-        description="Unimelb Subjects Planner"
+        img={creditCardImage}
+        name="creditCardImage"
+        description="creditCardImage"
       />
     </div>
   );
