@@ -6,6 +6,8 @@ import Comment from "./components/Comment";
 import SendEmail from "./components/EmailSend";
 import LeaveComment from "./components/LeaveComment";
 
+import Icons from "./components/Icons";
+
 const App = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -99,6 +101,21 @@ const App = () => {
 
   return (
     <div className="App">
+      <div
+        style={{
+          height: "70vh",
+          marginTop: "20vh",
+          textAlign: "center",
+          fontSize: "100px",
+          color: "#C4C4C6",
+        }}
+      >
+        Hello Visitor,
+        <div style={{ fontSize: "20px", lineHeight: "10px", color: "black" }}>
+          My Name is Tae-gyu, a passionate software and web engineer
+        </div>
+        <Icons />
+      </div>
       <ProjectsArray />
       <SendEmail OnChange={OnChange} OnSubmitEmail={OnSubmitEmail} />
       <div style={{ display: "flex", padding: "20px" }}></div>

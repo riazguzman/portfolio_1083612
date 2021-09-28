@@ -1,12 +1,13 @@
 import React from "react";
 
-const Project = ({ img, name, description }) => {
-  console.log(img);
+const Project = ({ img, name, description, github, link }) => {
+  console.log(description);
   return (
     <div
       style={{
         padding: "10px",
         margin: "20px",
+        marginBottom: "50px",
         display: "flex",
       }}
     >
@@ -22,7 +23,21 @@ const Project = ({ img, name, description }) => {
       <div style={{ marginLeft: "20px" }}>
         {" "}
         <div style={{ fontWeight: "bold" }}>{name}</div>
-        <div>{description}</div>
+        <div style={{ display: "flex", margin: "10px 0" }}>
+          <div style={{ fontWeight: "bold" }}>Github: </div>
+          <div>{github}</div>
+        </div>
+        {link && (
+          <div style={{ display: "flex", margin: "10px 0" }}>
+            <div style={{ fontWeight: "bold" }}>Link: </div>
+            <div>{link}</div>
+          </div>
+        )}
+        {description.map((descrip, i) => {
+          return (
+            <div style={{ width: "100%", marginBottom: "10px" }}>{descrip}</div>
+          );
+        })}
       </div>
     </div>
   );
