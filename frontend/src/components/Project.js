@@ -35,7 +35,16 @@ const Project = ({ img, name, description, github, link }) => {
         )}
         {description.map((descrip, i) => {
           return (
-            <div style={{ width: "100%", marginBottom: "10px" }}>{descrip}</div>
+            <div
+              style={{
+                boxSizing: "border-box",
+                padding: "10px",
+                width: "100%",
+                marginBottom: "10px",
+              }}
+            >
+              {descrip}
+            </div>
           );
         })}
       </div>

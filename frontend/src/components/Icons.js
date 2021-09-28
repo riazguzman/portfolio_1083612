@@ -13,6 +13,7 @@ const Icon = styled.div`
   display: flex;
   align-items: center;
   margin-top: 20px;
+  min-width: 200px;
   &:hover {
     background-color: #e7f2ff;
     cursor: pointer;
@@ -27,7 +28,7 @@ const Icons = () => {
   const scrollToBottom = () => [window.scrollTo(3000, 3000)];
 
   return (
-    <div style={{ display: "flex", padding: "20px 30vw" }}>
+    <div style={{ display: "flex", justifyContent: "center" }}>
       {" "}
       <a href="https://github.com/riazguzman">
         {" "}

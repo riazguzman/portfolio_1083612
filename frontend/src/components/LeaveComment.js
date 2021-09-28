@@ -13,15 +13,30 @@ const LeaveComment = ({ OnChangeComment, OnSubmitComment }) => {
         <div style={{ marginRight: "10px" }}>
           {" "}
           <div>Name</div>
-          <input name="name" type="text" onChange={OnChangeComment} />
+          <input
+            style={{ width: "70%" }}
+            name="name"
+            type="text"
+            onChange={OnChangeComment}
+          />
         </div>
         <div style={{ marginRight: "10px" }}>
           <div>Message Title</div>
-          <input name="title" type="text" onChange={OnChangeComment} />
+          <input
+            style={{ width: "70%" }}
+            name="title"
+            type="text"
+            onChange={OnChangeComment}
+          />
         </div>
         <div style={{ marginRight: "10px" }}>
           <div>Message</div>
-          <input name="content" type="text" onChange={OnChangeComment} />
+          <input
+            style={{ width: "70%" }}
+            name="content"
+            type="text"
+            onChange={OnChangeComment}
+          />
         </div>
       </div>
       <div style={{ marginTop: "10px" }}>

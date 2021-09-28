@@ -95,10 +95,6 @@ const App = () => {
     getPosts();
   }, []);
 
-  useEffect(() => {
-    console.log("comments", comments);
-  }, [comments]);
-
   return (
     <div className="App">
       <div
@@ -115,7 +111,7 @@ const App = () => {
           style={{
             marginTop: "20px",
             fontSize: "20px",
-            lineHeight: "10px",
+            lineHeight: "20px",
             color: "black",
           }}
         >
@@ -145,8 +141,7 @@ const App = () => {
               overflow: "auto",
             }}
           >
-            {comments.map((data, i) => {
-              console.log(data);
+            {comments.sort().map((data, i) => {
               let today = new Date();
               let date =
                 today.getFullYear() +
