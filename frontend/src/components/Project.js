@@ -27,10 +27,10 @@ const Project = ({ img, name, description, github, link }) => {
         <div style={{ fontWeight: "bold" }}>{name}</div>
         <div style={{ display: "flex", margin: "10px 0" }}>
           <div style={{ fontWeight: "bold" }}>Github: </div>
-          <div>{github}</div>
+          <div style={{ lineBreak: "anywhere" }}>{github}</div>
         </div>
         {link && (
-          <div style={{ display: "flex", margin: "10px 0" }}>
+          <div style={{ display: "flex", margin: "10px 0" }} link={link}>
             <div style={{ fontWeight: "bold" }}>Link: </div>
             <div>{link}</div>
           </div>

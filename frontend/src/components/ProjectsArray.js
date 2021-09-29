@@ -24,7 +24,7 @@ const ProjectsArray = () => {
     "> Algorith implemented using C.",
   ];
   return (
-    <div style={{}}>
+    <div>
       <Project
         img={unimelbSubjectsPlannerImage}
         name="unimelb Subjects Planner"
