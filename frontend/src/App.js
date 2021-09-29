@@ -25,6 +25,8 @@ const App = () => {
 
   const [comments, setComments] = useState([]);
 
+  const [emailSubmit, setEmailSubmit] = useState(false);
+
   const OnChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     console.log(formData);
@@ -39,7 +41,7 @@ const App = () => {
     e.preventDefault();
     try {
       const message = await axios.post(
-        "https://taegyuyun.herokuapp.com/api/comment",
+        "https://taegyuyun.herokuapp.com//api/comment",
         messageData
       );
       await getPosts();
@@ -52,7 +54,7 @@ const App = () => {
   const getPosts = async (e) => {
     try {
       const posts = await axios.get(
-        "https://taegyuyun.herokuapp.com/api/getComments"
+        "https://taegyuyun.herokuapp.com//api/getComments"
       );
       setComments(posts.data);
     } catch (err) {
@@ -62,7 +64,8 @@ const App = () => {
 
   const OnSubmitEmail = async (e) => {
     e.preventDefault();
-    var options = {
+    console.log("herehere");
+    let options = {
       method: "POST",
       url: "https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send",
       headers: {
@@ -83,14 +86,22 @@ const App = () => {
     };
 
     try {
-      const response = await axios.request(options);
-      console.log(response);
-      setFormData({ name: "", email: "", title: "", content: "" });
+      console.log("heree");
+      await Promise.all(axios.request(options), setEmailSubmit(true));
       console.log(formData);
     } catch (err) {
       console.error(err);
     }
   };
+
+  useEffect(() => {
+    if (emailSubmit) {
+      console.log("lol");
+      setTimeout(() => {
+        setEmailSubmit(false);
+      }, 3000);
+    }
+  }, [emailSubmit]);
 
   useEffect(() => {
     console.log("now");
@@ -130,6 +141,7 @@ const App = () => {
         formData={formData}
         OnChange={OnChange}
         OnSubmitEmail={OnSubmitEmail}
+        emailSubmit={emailSubmit}
       />
       <div style={{ display: "flex", padding: "20px" }}></div>
       <div
@@ -151,21 +163,18 @@ const App = () => {
               overflow: "auto",
             }}
           >
-            {comments.sort().map((data, i) => {
-              let today = new Date();
-              let date =
-                today.getFullYear() +
-                "-" +
-                (today.getMonth() + 1) +
-                "-" +
-                today.getDate();
+            {comments.map((data, i) => {
               return (
                 <Comment
                   id={i}
                   name={data.name}
                   title={data.title}
                   content={data.content}
-                  date={date}
+                  date={
+                    data.createdAt.slice(0, 10) +
+                    " " +
+                    data.createdAt.slice(11, 16)
+                  }
                 />
               );
             })}

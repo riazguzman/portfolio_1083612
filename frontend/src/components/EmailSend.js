@@ -1,7 +1,6 @@
-import React from "react";
-import Button from "../components/Button";
+import React, { useState } from "react";
 
-const SendEmail = ({ formData, OnChange, OnSubmitEmail }) => {
+const SendEmail = ({ formData, OnChange, OnSubmitEmail, emailSubmit }) => {
   return (
     <div
       style={{
@@ -47,12 +46,14 @@ const SendEmail = ({ formData, OnChange, OnSubmitEmail }) => {
           style={{ width: "100%", height: "100%", marginBottom: "20px" }}
         />
         <input
+          style={{ width: "100px", height: "50px" }}
           name="submit"
           type="button"
           onClick={OnSubmitEmail}
           value="Email"
         />
       </div>
+      <div style={{ color: emailSubmit ? "black" : "white" }}>Email Sent!</div>
     </div>
   );
 };

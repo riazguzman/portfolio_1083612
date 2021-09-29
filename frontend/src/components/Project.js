@@ -1,7 +1,6 @@
 import React from "react";
 
 const Project = ({ img, name, description, github, link }) => {
-  console.log(description);
   return (
     <div
       style={{
