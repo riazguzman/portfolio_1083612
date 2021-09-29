@@ -9,6 +9,7 @@ const Project = ({ img, name, description, github, link }) => {
         margin: "20px",
         marginBottom: "50px",
         display: "flex",
+        minWidth: "300px",
       }}
     >
       <img

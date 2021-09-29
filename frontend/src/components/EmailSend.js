@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../components/Button";
 
-const SendEmail = ({ OnChange, OnSubmitEmail }) => {
+const SendEmail = ({ formData, OnChange, OnSubmitEmail }) => {
   return (
     <div
       style={{
@@ -24,6 +24,7 @@ const SendEmail = ({ OnChange, OnSubmitEmail }) => {
       >
         <div>Email</div>
         <input
+          value={formData.email}
           style={{ marginBottom: "20px" }}
           name="email"
           type="text"
@@ -31,6 +32,7 @@ const SendEmail = ({ OnChange, OnSubmitEmail }) => {
         />
         <div>Title</div>
         <input
+          value={formData.title}
           style={{ marginBottom: "20px" }}
           name="title"
           type="text"
@@ -38,6 +40,7 @@ const SendEmail = ({ OnChange, OnSubmitEmail }) => {
         />
         <div>Content</div>
         <textarea
+          value={formData.content}
           name="content"
           type="text"
           onChange={OnChange}

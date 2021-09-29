@@ -85,6 +85,8 @@ const App = () => {
     try {
       const response = await axios.request(options);
       console.log(response);
+      setFormData({ name: "", email: "", title: "", content: "" });
+      console.log(formData);
     } catch (err) {
       console.error(err);
     }
@@ -94,6 +96,10 @@ const App = () => {
     console.log("now");
     getPosts();
   }, []);
+
+  useEffect(() => {
+    console.log(formData);
+  }, [formData]);
 
   return (
     <div className="App">
@@ -120,7 +126,11 @@ const App = () => {
         <Icons />
       </div>
       <ProjectsArray />
-      <SendEmail OnChange={OnChange} OnSubmitEmail={OnSubmitEmail} />
+      <SendEmail
+        formData={formData}
+        OnChange={OnChange}
+        OnSubmitEmail={OnSubmitEmail}
+      />
       <div style={{ display: "flex", padding: "20px" }}></div>
       <div
         style={{
