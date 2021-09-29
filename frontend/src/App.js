@@ -41,7 +41,7 @@ const App = () => {
     e.preventDefault();
     try {
       const message = await axios.post(
-        "https://taegyuyun.herokuapp.com//api/comment",
+        "https://taegyuyun.herokuapp.com/api/comment",
         messageData
       );
       await getPosts();
@@ -54,9 +54,10 @@ const App = () => {
   const getPosts = async (e) => {
     try {
       const posts = await axios.get(
-        "https://taegyuyun.herokuapp.com//api/getComments"
+        "https://taegyuyun.herokuapp.com/api/getComments"
       );
-      setComments(posts.data);
+      console.log(posts.data);
+      setComments(posts.data.reverse());
     } catch (err) {
       console.error(err);
     }
