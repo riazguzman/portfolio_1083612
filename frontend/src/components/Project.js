@@ -23,7 +23,7 @@ const Project = ({ img, name, description, github, link }) => {
         src={img}
         alt=""
       />
-      <div style={{ marginTop: "20px", marginLeft: "20px" }}>
+      <div style={{ marginLeft: "20px" }}>
         {" "}
         <div style={{ fontWeight: "bold" }}>{name}</div>
         <div style={{ display: "flex", margin: "10px 0" }}>
