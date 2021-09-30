@@ -1,6 +1,6 @@
 import React from "react";
 
-const LeaveComment = ({ OnChangeComment, OnSubmitComment }) => {
+const LeaveComment = ({ comment, OnChangeComment, OnSubmitComment }) => {
   return (
     <div style={{ padding: "20px" }}>
       <div
@@ -21,6 +21,7 @@ const LeaveComment = ({ OnChangeComment, OnSubmitComment }) => {
           {" "}
           <div>Name</div>
           <input
+            value={comment.name}
             style={{ width: "30%" }}
             name="name"
             type="text"
@@ -30,6 +31,7 @@ const LeaveComment = ({ OnChangeComment, OnSubmitComment }) => {
         <div style={{ marginRight: "10px" }}>
           <div>Message Title</div>
           <input
+            value={comment.title}
             style={{ width: "30%" }}
             name="title"
             type="text"
@@ -39,6 +41,7 @@ const LeaveComment = ({ OnChangeComment, OnSubmitComment }) => {
         <div style={{ marginRight: "10px", boxSizing: "border-box" }}>
           <div>Message</div>
           <textarea
+            value={comment.content}
             style={{ width: "100%", height: "100%" }}
             name="content"
             type="text"

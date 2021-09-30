@@ -45,6 +45,7 @@ const App = () => {
         messageData
       );
       await getPosts();
+      setMessageData({ name: "", email: "", title: "", content: "" });
       //console.log(message);
     } catch (err) {
       console.error(err);
@@ -88,7 +89,11 @@ const App = () => {
 
     try {
       console.log("heree");
-      await Promise.all(axios.request(options), setEmailSubmit(true));
+      await Promise.all(
+        axios.request(options),
+        setEmailSubmit(true),
+        setFormData({ name: "", email: "", title: "", content: "" })
+      );
       console.log(formData);
     } catch (err) {
       console.error(err);
@@ -154,6 +159,7 @@ const App = () => {
         }}
       >
         <LeaveComment
+          comment={messageData}
           OnChangeComment={OnChangeComment}
           OnSubmitComment={OnSubmitComment}
         />
