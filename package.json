@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "build": "react-scripts build",
+    "build": "npm install --prefix frontend && npm run build --prefix frontend",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "",
@@ -18,7 +18,8 @@
     "express": "^4.17.1",
     "express-validator": "^5.3.1",
     "mongoose": "^6.0.7",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.13"
